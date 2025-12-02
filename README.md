@@ -1,16 +1,27 @@
-# React + Vite
+## Stress Bomb 3D
+A 3D physics sandbox built with React and Three.js. This project features a custom-built projectile engine, procedural audio synthesis, and an optimized game loop running at a locked 60 FPS within the browser.
+(Optional: Add a screenshot of the game here later!)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# How to Play
+The game focuses on satisfying ballistics and destruction. You are placed in a "Golden Hour" canyon with a variety of geometric targets.
 
-Currently, two official plugins are available:
+Left Click (Hold): Charge your throw.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Visuals: Watch the crosshair shrink and the projectile glow red as power increases.
 
-## React Compiler
+Left Click (Release): Fire!
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Bomb: Heavy gravity, high arc, explosive impact. Destroys targets on hit.
 
-## Expanding the ESLint configuration
+Dart: Low gravity, high velocity, precision flight. Sticks into walls and targets.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Tech Stack & Key Features
+Three.js & React: Leverages useRef for direct DOM manipulation, ensuring the high-frequency game loop runs independently of the React render cycle to prevent stutter.
+
+Custom Physics Engine: Implemented manual velocity, gravity, air resistance (drag), and collision detection math for ballistic trajectories.
+
+Web Audio API: Zero external audio assets. All sound effects (launch pop, whoosh, deep bass explosions, woody thunks) are synthesized in real-time using Oscillators and Gain Nodes.
+
+Procedural Destruction: Targets fracture into debris particles upon impact using reverse-iteration loops for efficient memory management.
+
+Visual Polish: Features "Golden Hour" lighting, directional shadow mapping, and dynamic camera shake effects based on impact force.
