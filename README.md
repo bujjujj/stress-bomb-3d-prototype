@@ -25,3 +25,12 @@ Web Audio API: Zero external audio assets. All sound effects (launch pop, whoosh
 Procedural Destruction: Targets fracture into debris particles upon impact using reverse-iteration loops for efficient memory management.
 
 Visual Polish: Features "Golden Hour" lighting, directional shadow mapping, and dynamic camera shake effects based on impact force.
+
+# Future Roadmap
+This prototype serves as a proof-of-concept for a larger destruction-based game.
+
+- Porting mechanics to Unity for PhysX integration.
+
+- Advanced mesh fracturing (Voronoi shattering).
+
+- Multiplayer competitive modes.
